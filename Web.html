@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance - ZE Style Fashion Boutique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-image {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://placehold.co/1920x1080');
+            background-size: cover;
+            background-position: center;
+        }
+        .category-card:hover .category-overlay {
+            opacity: 1;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .testimonial-slide {
+            transition: transform 0.5s ease;
+        }
+    </style>
+    <style>
+         /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .whatsapp-button:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+      <!-- WhatsApp Button -->
+    <a href="https://wa.me/?text=Hello%20Clemsfashion%2C%20I%20have%20a%20question%20about%20your%20Style" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-pink-600">ELEGANCE</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="hover:text-pink-600">Home</a>
+                <a href="#" class="hover:text-pink-600">Shop</a>
+                <a href="#" class="hover:text-pink-600">Collections</a>
+                <a href="#" class="hover:text-pink-600">About</a>
+                <a href="#" class="hover:text-pink-600">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search..." class="border rounded-full py-1 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-pink-300 w-40 md:w-64">
+                    <i class="fas fa-search absolute right-3 top-2 text-gray-400"></i>
+                </div>
+                <a href="#"><i class="fas fa-user text-lg hover:text-pink-600"></i></a>
+                <a href="#"><i class="fas fa-shopping-bag text-lg hover:text-pink-600"></i></a>
+            </div>
+            <button class="md:hidden text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-image h-96 flex items-center justify-center text-white">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Collection 2025/2026</h1>
+            <p class="text-xl mb-8">Discover our new arrivals with 20% off for new customers</p>
+            <button class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-12 container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Shop by Category</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="category-card relative overflow-hidden rounded-lg h-48">
+                <img src="https://placehold.co/600x600" alt="Women in casual summer dress walking in a park with trees" class="w-full h-full object-cover">
+                <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white opacity-0 transition-opacity duration-300">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold">Casual</h3>
+                        <button class="mt-2 border border-white text-white py-1 px-4 rounded-full text-sm hover:bg-white hover:text-black transition">View All</button>
+                    </div>
+                </div>
+            </div>
+            <div class="category-card relative overflow-hidden rounded-lg h-48">
+                <img src="https://placehold.co/600x600" alt="Elegant formal evening gown with intricate beading details" class="w-full h-full object-cover">
+                <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white opacity-0 transition-opacity duration-300">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold">Formal</h3>
+                        <button class="mt-2 border border-white text-white py-1 px-4 rounded-full text-sm hover:bg-white hover:text-black transition">View All</button>
+                    </div>
+                </div>
+            </div>
+            <div class="category-card relative overflow-hidden rounded-lg h-48">
+                <img src="https://placehold.co/600x600" alt="Bride in white wedding dress with lace details standing in a garden" class="w-full h-full object-cover">
+                <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white opacity-0 transition-opacity duration-300">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold">Wedding</h3>
+                        <button class="mt-2 border border-white text-white py-1 px-4 rounded-full text-sm hover:bg-white hover:text-black transition">View All</button>
+                    </div>
+                </div>
+            </div>
+            <div class="category-card relative overflow-hidden rounded-lg h-48">
+                <img src="https://placehold.co/600x600" alt="Professional woman in stylish office attire holding a laptop" class="w-full h-full object-cover">
+                <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white opacity-0 transition-opacity duration-300">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold">Work</h3>
+                        <button class="mt-2 border border-white text-white py-1 px-4 rounded-full text-sm hover:bg-white hover:text-black transition">View All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold">New Arrivals</h2>
+                <a href="#" class="text-pink-600 hover:underline">View All</a>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="images/download.jpg" alt="Red floral summer dress with puff sleeves and wrap design" class="w-full h-64 object-cover">
+                        <div class="absolute top-0 right-0 p-2">
+                            <button class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-pink-600 hover:text-white">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold">Name of Dress</h3>
+                        <div class="flex items-center mt-1 mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-xs text-gray-500 ml-1">(24)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">XX amount</span>
+                            <button class="bg-pink-600 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-pink-700">
+                                <i class="fas fa-shopping-bag"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x800" alt="White linen blazer with navy blue silk blouse underneath" class="w-full h-64 object-cover">
+                        <div class="absolute top-0 right-0 p-2">
+                            <button class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-pink-600 hover:text-white">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold">Name of Dress</h3>
+                        <div class="flex items-center mt-1 mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-xs text-gray-500 ml-1">(18)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">XX amount</span>
+                            <button class="bg-pink-600 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-pink-700">
+                                <i class="fas fa-shopping-bag"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x800" alt="Black silk midi dress with ruffled sleeves and v-neck" class="w-full h-64 object-cover">
+                        <div class="absolute top-0 right-0 p-2">
+                            <button class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-pink-600 hover:text-white">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold">Name of Dress</h3>
+                        <div class="flex items-center mt-1 mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-xs text-gray-500 ml-1">(42)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">XX amount</span>
+                            <button class="bg-pink-600 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-pink-700">
+                                <i class="fas fa-shopping-bag"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x800" alt="Denim jumpsuit with wide legs and gold button details" class="w-full h-64 object-cover">
+                        <div class="absolute top-0 right-0 p-2">
+                            <button class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-pink-600 hover:text-white">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold">Name of Dress</h3>
+                        <div class="flex items-center mt-1 mb-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-xs text-gray-500 ml-1">(31)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">XX amount</span>
+                            <button class="bg-pink-600 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-pink-700">
+                                <i class="fas fa-shopping-bag"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="py-12 container mx-auto px-4">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold">Just For You</h2>
+            <a href="#" class="text-pink-600 hover:underline">View All</a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Product 1 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                <div class="relative">
+                    <img src="https://placehold.co/600x800" alt="Black leather tote bag with gold hardware and multiple compartments" class="w-full h-64 object-cover">
+                    <div class="absolute top-0 right-0 p-2">
+                        <button class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-pink-600 hover:text-white">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold">Name of Dress</h3>
+                    <div class="flex items-center mt-1 mb-2">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-xs text-gray-500 ml-1">(132)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold">XX amount</span>
+                        <button class="bg-pink-600 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-pink-700">
+                            <i class="fas fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                <div class="relative">
+                    <img src="https://placehold.co/600x800" alt="White sneakers with minimalist design and soft pink accents" class="w-full h-64 object-cover">
+                    <div class="absolute top-0 right-0 p-2">
+                        <button class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-pink-600 hover:text-white">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold">Name of Dress</h3>
+                    <div class="flex items-center mt-1 mb-2">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-xs text-gray-500 ml-1">(89)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold">XX amount</span>
+                        <button class="bg-pink-600 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-pink-700">
+                            <i class="fas fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                <div class="relative">
+                    <img src="https://placehold.co/600x800" alt="Rose gold pendant necklace with geometric design on woman's neck" class="w-full h-64 object-cover">
+                    <div class="absolute top-0 right-0 p-2">
+                        <button class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-pink-600 hover:text-white">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold">Name of Dress</h3>
+                    <div class="flex items-center mt-1 mb-2">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="text-xs text-gray-500 ml-1">(67)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold">XX amount</span>
+                        <button class="bg-pink-600 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-pink-700">
+                            <i class="fas fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                <div class="relative">
+                    <img src="https://placehold.co/600x800" alt="Wool blend wrap coat in camel color with self-tie belt" class="w-full h-64 object-cover">
+                    <div class="absolute top-0 right-0 p-2">
+                        <button class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-pink-600 hover:text-white">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold">Name of Dress</h3>
+                    <div class="flex items-center mt-1 mb-2">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-xs text-gray-500 ml-1">(53)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold">XX amount</span>
+                        <button class="bg-pink-600 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-pink-700">
+                            <i class="fas fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
+            <div class="relative overflow-hidden">
+                <div class="flex transition-transform duration-500" id="testimonial-slider">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide min-w-full px-4">
+                        <div class="bg-white p-8 rounded-lg shadow-md relative">
+                            <div class="absolute -top-6 left-6 bg-pink-600 text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                <i class="fas fa-quote-left text-xl"></i>
+                            </div>
+                            <p class="text-gray-700 mb-6">I bought the silk midi dress for a wedding and received so many compliments! The quality is exceptional and it was so comfortable to wear all night. Will definitely shop here again!</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/60x60" alt="Smiling woman with curly brown hair wearing the purchased dress at a social event" class="w-12 h-12 rounded-full object-cover">
+                                <div class="ml-4">
+                                    <h4 class="font-bold">ELISE</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide min-w-full px-4 hidden">
+                        <div class="bg-white p-8 rounded-lg shadow-md relative">
+                            <div class="absolute -top-6 left-6 bg-pink-600 text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                <i class="fas fa-quote-left text-xl"></i>
+                            </div>
+                            <p class="text-gray-700 mb-6">The leather tote bag has become my everyday essential. It fits everything I need for work while still looking stylish. The craftsmanship is excellent and it gets better with time.</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/60x60" alt="Professional woman in business attire carrying the leather tote on her shoulder" class="w-12 h-12 rounded-full object-cover">
+                                <div class="ml-4">
+                                    <h4 class="font-bold">MARTH</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide min-w-full px-4 hidden">
+                        <div class="bg-white p-8 rounded-lg shadow-md relative">
+                            <div class="absolute -top-6 left-6 bg-pink-600 text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                <i class="fas fa-quote-left text-xl"></i>
+                            </div>
+                            <p class="text-gray-700 mb-6">Shopping here was such a great experience! The customer service team helped me find the perfect size when I was unsure, and the shipping was faster than expected. Love my new jumpsuit!</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/60x60" alt="Young woman laughing and posing in denim jumpsuit during a night out with friends" class="w-12 h-12 rounded-full object-cover">
+                                <div class="ml-4">
+                                    <h4 class="font-bold">Manou</h4>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 focus:bg-pink-600" data-index="0"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 focus:bg-pink-600" data-index="1"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 focus:bg-pink-600" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-pink-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Join Our Community</h2>
+            <p class="max-w-2xl mx-auto mb-8">Subscribe to our newsletter for exclusive offers, style tips, and new collection updates. Get 15% off your first order!</p>
+            <form class="max-w-md mx-auto">
+                <div class="flex">
+                    <input type="email" placeholder="Your email address" class="flex-grow py-3 px-4 rounded-l-lg focus:outline-none text-gray-800">
+                    <button type="submit" class="bg-black hover:bg-gray-900 text-white py-3 px-6 rounded-r-lg transition duration-300">Subscribe</button>
+                </div>
+                <p class="text-xs mt-2 opacity-70">We respect your privacy. Unsubscribe at any time.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Shop</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-pink-400">New Arrivals</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Best Sellers</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Dresses</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Tops</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Bottoms</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Accessories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Customer Service</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-pink-400">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-pink-400">FAQs</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Shipping & Returns</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Size Guide</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Track Order</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">About Us</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-pink-400">Our Story</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Sustainability</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Careers</a></li>
+                        <li><a href="#" class="hover:text-pink-400">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-600">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-600">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-600">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Payment Methods</h3>
+                    <div class="flex space-x-2">
+                        <p>Orange money</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <p>Mobile money</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-sm text-gray-400">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        &copy; 2026/2025 Elegance. All rights reserved.
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="hover:text-white">Privacy Policy</a>
+                        <a href="#" class="hover:text-white">Terms of Service</a>
+                        <a href="#" class="hover:text-white">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Testimonial slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.getElementById('testimonial-slider');
+            const dots = document.querySelectorAll('.testimonial-dot');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                const slides = document.querySelectorAll('.testimonial-slide');
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('hidden', i !== index);
+                });
+                
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('bg-pink-600', i === index);
+                    dot.classList.toggle('bg-gray-300', i !== index);
+                });
+            }
+            
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    currentSlide = parseInt(this.getAttribute('data-index'));
+                    showSlide(currentSlide);
+                });
+            });
+            
+            // Auto-advance slides every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % dots.length;
+                showSlide(currentSlide);
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
